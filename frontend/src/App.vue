@@ -1,8 +1,6 @@
 <script setup lang=ts>
 import { ref, computed } from 'vue';
 
-
-
 const name = ref('Vue 3 with TypeScript');
 
 type Todo = { id: number; title: string; completed: boolean };
@@ -18,6 +16,9 @@ const count = computed(
     return todos.value.filter((i) => i.completed == false).length
   }
 )
+
+import AddTodo from './components/AddTodo.vue'
+
 </script>
 
 <template>
@@ -39,5 +40,14 @@ const count = computed(
         </li>
       </ul>
     </section>
+
+    <AddTodo v-model:todos="todos"/>
+    <AddTodo v-model:todos="todos"/>
+    <AddTodo v-model:todos="todos"/>
+
+
   </div>
 </template>
+
+
+
